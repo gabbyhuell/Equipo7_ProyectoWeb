@@ -39,7 +39,7 @@ class Usuario(models.Model):
     fecha_actualizacion = models.DateField('Fecha de modificacion', auto_now=True,
                                            auto_now_add=False)  # auto_now fecha automaticamente cada vez que el registro se modifique
     fecha_eliminacion = models.DateField('Fecha de eliminacion', auto_now=True, auto_now_add=False)
-    imagen_perfil = models.CharField(max_length=255)
+    imagen = models.ImageField('Imagen', upload_to='categoria/', max_length=255)
 
     class Metta:
         verbose_name = 'Usuario'
