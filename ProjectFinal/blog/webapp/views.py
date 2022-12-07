@@ -11,3 +11,12 @@ def bienvenido(request):
 
 def despedirse(request):
     return HttpResponse("despedida desde Django")
+
+def nosotros(request):
+    return render(request, 'nosotros.html')
+
+def inicio(request):
+    return render(request, 'index.html')
+
+def registrarse(request):
+    return render(request, 'registrarse.html')
