@@ -22,7 +22,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', bienvenido),
     path('despedida.html', despedirse),
-    path('aboutus.html', nosotros),
+    path('nosotros.html', nosotros),
     path('index.html', inicio),
     path('registrarse.html', registrarse),
+    path('login.html', login),
+    path('crear_post.html', crearPost),
+    path('busqueda.html', Busqueda),
+    path('resultado.html', resultado),
 ]
