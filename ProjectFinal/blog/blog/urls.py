@@ -15,7 +15,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
 from webapp.views import *
 
 urlpatterns = [
@@ -29,4 +28,5 @@ urlpatterns = [
     path('crear_post.html', crearPost),
     path('busqueda.html', Busqueda),
     path('resultado.html', resultado),
+    path("contacto.html", contact)
 ]

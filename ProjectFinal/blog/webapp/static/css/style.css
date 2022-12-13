@@ -143,7 +143,7 @@ header .navbar-brand img {
 	margin-top: 10px;
 	font-size: 13px;
 	line-height: 24px;
-	color: #ddd;
+	color: rgb(130, 130, 130);
 	text-transform: uppercase;
 	letter-spacing: 0.055em;
 }
