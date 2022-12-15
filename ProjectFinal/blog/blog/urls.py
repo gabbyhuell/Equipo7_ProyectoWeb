@@ -28,5 +28,6 @@ urlpatterns = [
     path('crear_post.html', crearPost),
     path('busqueda.html', Busqueda),
     path('resultado.html', resultado),
-    path("contacto.html", contact)
+    path("contacto.html", contact),
+    path("trabajo.html", trabajo)
 ]

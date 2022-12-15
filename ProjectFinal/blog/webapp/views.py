@@ -30,6 +30,9 @@ def registrarse(request):
 def login(request):
     return render(request, 'login.html')
 
+def trabajo(request):
+    return render(request, 'trabajo.html')
+
 def crearPost(request):
     if request.method == 'POST':
         post_form = PostForm(request.POST or None, request.FILES or None)
