@@ -1,5 +1,8 @@
 from django.db import models
+from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 # Create your models here.
 class Direccion(models.Model):
@@ -39,7 +42,7 @@ class Usuario(models.Model):
     fecha_actualizacion = models.DateField('Fecha de modificacion', auto_now=True,
                                            auto_now_add=False)  # auto_now fecha automaticamente cada vez que el registro se modifique
     fecha_eliminacion = models.DateField('Fecha de eliminacion', auto_now=True, auto_now_add=False)
-    imagen = models.ImageField('Imagen', upload_to='categoria/', max_length=255)
+    imagen = models.ImageField('Imagen', upload_to='categoria/', max_length=255,null = True)
 
     class Metta:
         verbose_name = 'Usuario'
@@ -53,8 +56,8 @@ class Usuario(models.Model):
 class Noticia(models.Model):
     titulo = models.CharField('Titulo', max_length=255)
     teaser = models.CharField('Resumen', max_length=511)
-    contenido = RichTextField()
-    imagen = models.ImageField('Imagen', upload_to='categoria/', max_length=255)
+    contenido = models.CharField('Resumen', max_length=511) #RichTextField()
+    imagen = models.ImageField('Imagen', upload_to='categoria/', max_length=255, null=True)
     estatus = models.BooleanField('Publicado / No publicado', default=False)
     fecha_creacion = models.DateField('Fecha de creacion', auto_now=False,
                                       auto_now_add=True, null=True, blank=True)  # auto_now_add fecha autom. en el momento de creacion
