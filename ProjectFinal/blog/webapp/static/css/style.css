@@ -66,7 +66,7 @@ header .navbar {
 	box-shadow: 0 1px 15px rgba(0,0,0,0.2);
 }
 header .navbar-default .navbar-nav>li>a {
-	margin: 15px 3px;
+	margin: 25px 10px;
 	padding-top: 6px;
 	color: #fff;
 	padding-bottom: 6px;
@@ -113,9 +113,9 @@ header .navbar-brand {
 	height: auto;
 }
 header .navbar-brand img {
-	position: relative;
+	position: center;
 	top: 5px;
-	max-width: 165px;
+	max-width: 80px;
 }
 
 /*
