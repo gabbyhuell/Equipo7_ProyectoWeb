@@ -63,7 +63,7 @@ def logeo(request):
 def trabajo(request):
     return render(request, 'trabajo.html')
 
-
+@login_required
 def crearPost(request):
     if request.method == 'POST':
         post_form = PostForm(request.POST or None, request.FILES or None)
@@ -74,7 +74,7 @@ def crearPost(request):
         post_form = PostForm()
     return render(request, 'crear_post.html', {'post_form': post_form})
 
-
+@login_required
 def Busqueda(request):
     if request.GET["post"]:
         # mensaje = "Buscar: %r" %request.GET["post"]
@@ -130,4 +130,4 @@ def logout_view(request):
 
 @method_decorator(csrf_exempt, name='dispatch')
 class UserUpdateView(LoginRequiredMixin, View):
-    template_name = 'home.html'
+    template_name = 'index.html'

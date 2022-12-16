@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from webapp.views import *
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('', inicio),
@@ -31,5 +32,5 @@ urlpatterns = [
     path('resultado.html', resultado),
     path("contacto.html", contact),
     path("trabajo.html", trabajo),
-    path('accounts/password_reset', include('django.contrib.auth.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
