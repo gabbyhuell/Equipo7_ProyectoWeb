@@ -46,7 +46,12 @@
 							<ul class="nav navbar-nav navbar-right">
 								<li><a href="index.html">Inicio</a></li>
 								<li><a href="registrarse.html">Registrarse</a></li>
-								<li><a href="login.html">Loguearse</a></li>
+								{% if user.is_authenticated %}
+									<li> User: {{ user.get_username }}</li>
+									<li><a href='logout'>Logout</a></li>
+								{% else %}
+									<li><a href="login.html">Loguearse</a></li>
+								{% endif %}
 								<li><a href="nosotros.html">Nosotros</a></li>
 								<li><a href="login.html">Voluntariado</a></li>
 								<li><a href="contacto.html">Contactanos</a></li>
@@ -58,6 +63,7 @@
 										<li><a href="#blog">Nuevo Blog</a></li>
 										<li><a href="#subscribe">Subscribirse</a></li>
 										<li><a href="#team">Equipo Ejecutivo</a></li>
+										<li><a href='logout'>Desconectar</a></li>
 										<li><a href="#">-- algo mas?? --</a></li>
 									</ul>
 								</li>

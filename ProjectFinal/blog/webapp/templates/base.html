@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-			<title>Contacto</title> 
+			<title> -= Bomberos Voluntarios =-</title> 
 			<!-- Description, Keywords and Author -->
 			<meta name="description" content="Your description">
 			<meta name="keywords" content="Your,Keywords">
@@ -20,10 +20,11 @@
 			<!-- Favicon -->
 			<link rel="shortcut icon" href="#">
 	</head>
-
+	
 	<body>
 	
 		<div class="wrapper">
+		
 			<!-- header -->
 			<header>
 				<!-- navigation -->
@@ -37,7 +38,7 @@
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>
-							<a class="navbar-brand" href="index.html"><img class="img-responsive" src="../static/img/logo.jpg" alt="Logo" /></a>
+							<a class="navbar-brand" href="#"><img class="img-responsive" src="../static/img/logo.jpg" alt="Logo" /></a>
 						</div>
 
 						<!-- Collect the nav links, forms, and other content for toggling -->
@@ -72,46 +73,36 @@
 			</header>
 
 
-		<!--Contact form-->
-			<!-- banner -->
-		<body>
-			<div class="banner">
+			<div>
+				{% block content %}{% endblock %}
+			</div>
+
+
+
+
+			<!-- subscribe -->
+			<div class="subscribe" id="subscribe">
 				<div class="container">
-					<!-- form content / register area -->
-					<div class="register-area">
-						<!-- heading -->
-						{% if messages %}
-						<ul class="messages">
-							{% for message in messages %}
-						<h2 style="color:rgb(0, 106, 0)" align="center"><li{% if messages.tag %} class="{{ message.tags }}"{% endif %}>{{ message }}</li></h2>
-							{% endfor %}
-						</ul>
-						{% endif %}
-						<h2 style="color:white">Contactanos</h2>
-							<p align="left" style="color:white">
-							Escriba su nombre, dirección de correo electrónico y un mensaje a continuación si tiene alguna pregunta.
-    	        			Uno de los miembros de nuestro personal estará encantado de contactarlo directamente y responder sus preguntas lo antes posible.
-							</p>
-
-						<form method="post">
-   		  	  			 {% csrf_token %}
-
-						 {{form.as_p}}
-
-
-						<button type="Enviar" class="btn btn-default"> Enviar</button>
-        				</form>
-    				</div>
+					<!-- subscribe content -->
+					<div class="sub-content">
+						<h3>SUSCRIBIRSE PARA RECIBIR NOVEDADES</h3>
+						<form role="form">
+							<div class="input-group">
+								<input type="text" class="form-control" placeholder="Email...">
+									<span class="input-group-btn">
+										<button class="btn btn-default" type="button">Subscribirse</button>
+									</span>
+							</div><!-- /input-group -->
+						</form>
+					</div>
 				</div>
 			</div>
-		</body>
-			<!-- banner end -->
+			<!-- subscribe end -->
 			
 			<!-- footer -->
-			<footer class="ffoot">
+			<footer>
 				<div class="container">
-					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1784.772929624745!2d-59.34945158611604!3d-26.5347265847374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc5627f15177b3cd7!2zMjbCsDMyJzA1LjAiUyA1OcKwMjAnNTAuNCJX!5e0!3m2!1ses-419!2sar!4v1671056884619!5m2!1ses-419!2sar" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-					<p><a href="index.html">INICIO</a> | <a href="#work">TRABAJOS</a> | <a href="#team">EQUIPO</a> | <a href="contacto.html">CONTACTO</a></p>
+					<p><a href="#">Home</a> | <a href="#work">works</a> | <a href="#team">Team</a> | <a href="#contact">Contact</a></p>
 					<div class="social">
 						<a href="#"><i class="fa fa-facebook"></i></a>
 						<a href="#"><i class="fa fa-twitter"></i></a>
@@ -121,7 +112,7 @@
 					</div>
 					<!-- copy right -->
 					<!-- This theme comes under Creative Commons Attribution 4.0 Unported. So don't remove below link back -->
-					<p class="copy-right">Copyright &copy; 2022 <a href="#">EQUIPO 7 INFO</a> | DISEÑO POR : <a href="http://www.indioweb.in/portfolio">TEAM 7</a>, SIN DERECHOS </p>
+					<p class="copy-right">Copyright &copy; 2014 <a href="#">Your Site</a> | Designed By : <a href="http://www.indioweb.in/portfolio">IndioWeb</a>, All rights reserved. </p>
 				</div>
 			</footer>
 
@@ -130,14 +121,14 @@
 		
 		<!-- Javascript files -->
 		<!-- jQuery -->
-		<script src="js/jquery.js"></script>
+		<script src="../static/js/jquery.js"></script>
 		<!-- Bootstrap JS -->
-		<script src="js/bootstrap.min.js"></script>
+		<script src="../static/js/bootstrap.min.js"></script>
 		<!-- Respond JS for IE8 -->
-		<script src="js/respond.min.js"></script>
+		<script src="../static/js/respond.min.js"></script>
 		<!-- HTML5 Support for IE -->
-		<script src="js/html5shiv.js"></script>
+		<script src="../static/js/html5shiv.js"></script>
 		<!-- Custom JS -->
-		<script src="js/custom.js"></script>
+		<script src="../static/js/custom.js"></script>
 	</body>	
-</html>			
+</html>
