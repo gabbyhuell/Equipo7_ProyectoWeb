@@ -67,10 +67,10 @@ header .navbar {
 }
 header .navbar-default .navbar-nav>li>a {
 	margin: 15px 3px;
-	padding-top: 6px;
+	padding-top: 10px;
 	color: #fff;
-	padding-bottom: 6px;
-	border-radius: 2px;
+	padding-bottom: 10px;
+	border-radius: 3px;
 }
 
 header .navbar-default .navbar-nav>li>a:hover, 
@@ -115,7 +115,7 @@ header .navbar-brand {
 header .navbar-brand img {
 	position: relative;
 	top: 5px;
-	max-width: 165px;
+	max-width: 140px;
 }
 
 /*
@@ -132,18 +132,18 @@ header .navbar-brand img {
 .banner h2 {
 	margin-top: 0;
 	margin-bottom: 0;
-	font-size: 28px;
+	font-size: 30px;
 	line-height: 35px;
-	color: #eee;
+	color: #FBFCFC;
 	text-transform: capitalize;
 }
 .banner p {
 	max-width: 700px;
 	margin: 0 auto;
 	margin-top: 10px;
-	font-size: 13px;
+	font-size: 17px;
 	line-height: 24px;
-	color: #ddd;
+	color: #FBFCFC;
 	text-transform: uppercase;
 	letter-spacing: 0.055em;
 }
