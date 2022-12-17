@@ -53,7 +53,7 @@ class Usuario(models.Model):
 class Noticia(models.Model):
     titulo = models.CharField('Titulo', max_length=255)
     teaser = models.CharField('Resumen', max_length=511)
-    contenido = models.CharField('Resumen', max_length=511) #RichTextField()
+    contenido = models.CharField('Contenido', max_length=511) #RichTextField()
     imagen = models.ImageField('Imagen', upload_to='categoria/', max_length=255, null=True)
     estatus = models.BooleanField('Publicado / No publicado', default=False)
     fecha_creacion = models.DateField('Fecha de creacion', auto_now=False,
