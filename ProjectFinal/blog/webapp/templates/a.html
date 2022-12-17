@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+			<title>-= Bomberos Voluntarios =-</title> 
+			<!-- Description, Keywords and Author -->
+			<meta name="description" content="Your description">
+			<meta name="keywords" content="Your,Keywords">
+			<meta name="author" content="ResponsiveWebInc">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			
+			<!-- Styles -->
+			<!-- Bootstrap CSS -->
+			<link href="static/css/bootstrap.min.css" rel="stylesheet">
+			<!-- Font awesome CSS -->
+			<link href="static/css/font-awesome.min.css" rel="stylesheet">		
+			<!-- Custom CSS -->
+			<link href="static/css/style.css" rel="stylesheet">
+			
+			<!-- Favicon -->
+			<link rel="shortcut icon" href="#">
+	</head>
+	
+	<body>
+	
+		<div class="wrapper">
+		
+			<!-- header -->
+			<header>
+				<!-- navigation -->
+				<nav class="navbar navbar-default" role="navigation">
+					<div class="container">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<a class="navbar-brand" href="index.html"><img class="img-responsive" src="../static/img/logo_.png" alt="Logo" /></a>
+						</div>
+
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav navbar-right">
+								<li><a href="index.html">Inicio</a></li>
+								<li><a href="registrarse.html">Registrarse</a></li>
+								{% if user.is_authenticated %}
+									<li> User: {{ user.get_username }}</li>
+									<li><a href='logout'>Logout</a></li>
+								{% else %}
+									<li><a href="login.html">Loguearse</a></li>
+								{% endif %}
+								<li><a href="nosotros.html">Nosotros</a></li>
+								<li><a href="login.html">Voluntariado</a></li>
+								<li><a href="contacto.html">Contactanos</a></li>
+								{% if user.is_superuser %}
+									<li><a href="crear_post.html">BLOG</a></li>
+								{% endif %}
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <span class="caret"></span></a>
+									<ul class="dropdown-menu" role="menu">
+										<li><a href="#event">Eventos</a></li>
+										<li><a href="#blog">Nuevo Blog</a></li>
+										<li><a href="#subscribe">Subscribirse</a></li>
+										<li><a href="#team">Equipo Ejecutivo</a></li>
+										<li><a href='logout'>Desconectar</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div><!-- /.navbar-collapse -->
+					</div><!-- /.container-fluid -->
+				</nav>
+			</header>
+			
+			<!-- banner -->
+			<div class="banner">
+				<div class="container">
+					<!-- heading -->
+					<h2>BOMBEROS VOLUNTARIOS - SAN MARTIN CHACO </h2>
+					<!-- paragraph -->
+					<p style="color:rgb(225, 225, 225)">Proteger la vida, el ambiente y el patrimonio del municipio de General Jose de San Martín Chaco</p>
+				</div>
+			</div>
+			<!-- banner end -->
+			
+			<!-- after banner -->
+			<div class="after-banner">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-4 col-sm-4">
+							<!-- after banner item -->
+							<div class="ab-item">
+								<!-- heading -->
+								<h3> MISION </h3>
+								<!-- paragraph -->
+								<p>atención y gestión del riesgo en incendios, rescates, y otras emergencias, de manera segura, eficiente, con sentido de responsabilidad social, fundamentadas en la excelencia institucional del talento humano.</p>
+								<br>
+								<a href="#">Read More</a>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-4">
+							<!-- after banner item -->
+							<div class="ab-item">
+								<!-- heading -->
+								<h3> VISION </h3>
+								<!-- paragraph -->
+								<p>Para el año 2028 la Asociación de Bomberos Voluntarios de General San Martín contará con equipamientos de última tecnología, vehículos nuevos y un espacio físico propio donde nos permitirá mejorar la prestación del servicio.</p>
+								<br>
+								<a href="#">Read More</a>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-4">
+							<!-- after banner item -->
+							<div class="ab-item">
+								<!-- heading -->
+								<h3> OBJETIVO </h3>
+								<!-- paragraph -->
+								<p>Preparar la respuesta y responder de manera efectiva y segura ante incendios y casos que requieran operaciones de rescate, así como en las demás situaciones de emergencia que se presenten en el municipio de General Jose de San Martín.</p>
+								<br>
+								<a href="#">Read More</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- after banner end-->
+			
+			<!-- events -->
+			<div class="event" id="event">
+				<div class="container">
+					<div class="default-heading">
+						<!-- heading -->
+						<h2> NOTICIAS </h2>
+					</div>
+					<div class="row">
+						<div class="col-md-4 col-sm-4">
+							<!-- event item -->
+							<div class="event-item">
+								<!-- image -->
+								<img class="img-responsive" src="../static/img/event/1.jpg" alt="Events" />
+								<!-- heading -->
+								<h4><a href="#"> CURSO RCP </a></h4>
+								<!-- sub text -->
+								<span class="sub-text">Capacitación en reanimacion cardiopulmonar</span>
+								<!-- paragraph -->
+								<p>Salvar vidas In Situ requiere del adecuado entrenamiento</p>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-4">
+							<!-- event item -->
+							<div class="event-item">
+								<!-- image -->
+								<img class="img-responsive" src="../static/img/event/2.jpg" alt="Events" />
+								<!-- heading -->
+								<h4><a href="#"> Reunion Vecinal </a></h4>
+								<!-- sub text -->
+								<span class="sub-text">La comunicacion como eje central.</span>
+								<!-- paragraph -->
+								<p> Dar aviso inmediatamente es la clave del exito contra el fuego.</p>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-4">
+							<!-- event item -->
+							<div class="event-item">
+								<!-- image -->
+								<img class="img-responsive" src="../static/img/event/3.jpg" alt="Events" />
+								<!-- heading -->
+								<h4><a href="#">Bomberos en las escuelas.</a></h4>
+								<!-- sub text -->
+								<span class="sub-text">Integrating technology and software solutions.</span>
+								<!-- paragraph -->
+								<p>Simulacion y Plan de escape ante siniestros.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- events end -->
+
+			<!-- blog -->
+			<div class="blog" id="blog">
+				<div class="container">
+					<div class="default-heading">
+						<!-- heading -->
+						<h2>Blogs Recientes</h2>
+					</div>
+					<div class="row">
+						<div class="col-md-6 col-sm-6">
+							<!-- blog entry -->
+							<div class="entry">
+								<!-- blog entry image -->
+								<img class="img-responsive" src="../static/img/blog/1.jpg" alt="Blog" />
+								<!-- heading / blog post title -->
+								<h3><a href="#">Los Medios de comunicacion mas importantes </a></h3>
+								<!-- blog information -->
+								<span class="meta">
+									Diciembre 2022 | Tag: Comunicación | por: Fernando E
+								</span>
+								<!-- paragraph -->
+								<p> debate para definir cual es el medio de comunicacion por excelencia, telefono, whatsapp, FB???.</p>
+							</div>
+						</div>
+						<div class="col-md-6 col-sm-6">
+							<!-- blog entry -->
+							<div class="entry">
+								<!-- blog entry image -->
+								<img class="img-responsive" src="../static/img/blog/2.jpg" alt="Blog" />
+								<!-- heading / blog post title -->
+								<h3><a href="#"> Elementos contra Incendios </a></h3>
+								<!-- blog information -->
+								<span class="meta">
+									Diciembre 2022 | Tag: Comunicación | por: Fernando E
+								</span>
+								<!-- paragraph -->
+								<p> Los extintores: lo que se debe saber antes de adquirir uno?... tipo de industria,.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- blog end -->
+
+			<!-- team -->
+			<div class="team" id="team">
+				<div class="container">
+					<div class="default-heading">
+						<!-- heading -->
+						<h2>NUESTRO EQUIPO</h2>
+					</div>
+					<div class="row">
+						<div class="col-md-3 col-sm-3">
+							<!-- team member -->
+							<div class="member">
+								<!-- images -->
+								<img class="img-responsive" src="../static/img/team/1.jpg" alt="Team Member" />
+								<!-- heading -->
+								<h3>CAPITAN</h3>
+								<!-- designation -->
+								<span class="dig"> JEFE CAMION 1</span>
+								<!-- email -->
+								<a href="#">BOMBERO1.1@SANMARTIN.COM</a>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-3">
+							<!-- team member -->
+							<div class="member">
+								<!-- images -->
+								<img class="img-responsive" src="../static/img/team/2.jpg" alt="Team Member" />
+								<!-- heading -->
+								<h3>COMANDANTE 1</h3>
+								<!-- designation -->
+								<span class="dig">CEO</span>
+								<!-- email -->
+								<a href="#">COMANDANTE1.1@SANMARTIN.COM</a>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-3">
+							<!-- team member -->
+							<div class="member">
+								<!-- images -->
+								<img class="img-responsive" src="../static/img/team/1.jpg" alt="Team Member" />
+								<!-- heading -->
+								<h3>Adam Miser</h3>
+								<!-- designation -->
+								<span class="dig">CEO</span>
+								<!-- email -->
+								<a href="#">executive.member@bloger.com</a>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-3">
+							<!-- team member -->
+							<div class="member">
+								<!-- images -->
+								<img class="img-responsive" src="../static/img/team/2.jpg" alt="Team Member" />
+								<!-- heading -->
+								<h3>Adam Miser</h3>
+								<!-- designation -->
+								<span class="dig">CEO</span>
+								<!-- email -->
+								<a href="#">executive.member@bloger.com</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- team end -->
+			
+			<!-- footer -->
+			<footer>
+				<div class="container">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1784.772929624745!2d-59.34945158611604!3d-26.5347265847374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc5627f15177b3cd7!2zMjbCsDMyJzA1LjAiUyA1OcKwMjAnNTAuNCJX!5e0!3m2!1ses-419!2sar!4v1671056884619!5m2!1ses-419!2sar" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+					<p><a href="index.html">INICIO</a> | <a href="#work">TRABAJOS</a> | <a href="#team">EQUIPO</a> | <a href="contacto.html">CONTACTO</a></p>
+					<div class="social">
+						<a href="#"><i class="fa fa-facebook"></i></a>
+						<a href="#"><i class="fa fa-twitter"></i></a>
+						<a href="#"><i class="fa fa-dribbble"></i></a>
+						<a href="#"><i class="fa fa-linkedin"></i></a>
+						<a href="#"><i class="fa fa-google-plus"></i></a>
+					</div>
+					<!-- copy right -->
+					<!-- This theme comes under Creative Commons Attribution 4.0 Unported. So don't remove below link back -->
+					<p class="copy-right">Copyright &copy; 2022 <a href="#">EQUIPO 7 INFO</a> | DISEÑO POR : TEAM 7, SIN DERECHOS </p>
+				</div>
+		</footer>
+
+		</div>
+		
+		
+		<!-- Javascript files -->
+		<!-- jQuery -->
+		<script src="../static/js/jquery.js"></script>
+		<!-- Bootstrap JS -->
+		<script src="../static/js/bootstrap.min.js"></script>
+		<!-- Respond JS for IE8 -->
+		<script src="../static/js/respond.min.js"></script>
+		<!-- HTML5 Support for IE -->
+		<script src="../static/js/html5shiv.js"></script>
+		<!-- Custom JS -->
+		<script src="../static/js/custom.js"></script>
+	</body>	
+</html>
