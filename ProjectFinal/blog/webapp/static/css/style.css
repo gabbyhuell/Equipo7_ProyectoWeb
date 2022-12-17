@@ -104,7 +104,7 @@ header .navbar-nav .dropdown-menu:after {
 
 header .navbar-nav .dropdown-menu:before {
 	border-color: rgba(194, 225, 245, 0);
-	border-bottom-color: #EC7063;
+	border-bottom-color: #fff;
 	border-width: 8px;
 	margin-right: -1px;
 }
@@ -123,7 +123,7 @@ header .navbar-brand img {
  */
  
 .banner {
-	background: #e47133;
+	background: #E74C3C;
 	padding-top: 120px;
 	padding-bottom: 120px;
 	text-align: center;
@@ -271,7 +271,7 @@ header .navbar-brand img {
 	margin-top: 60px;
 	padding-top: 80px;
 	padding-bottom: 80px;
-	background: #f8f8f8;
+	background: #CCD1D1;
 	border-top: 1px solid #ddd;
 	border-bottom: 1px solid #ddd;
 }
@@ -387,7 +387,7 @@ header .navbar-brand img {
 footer {
 	margin-top: 80px;
 	padding: 50px 0;
-	background: #d65814;
+	background: #B03A2E;
 	text-align: center;
 	border-top: 1px solid rgba(0,0,0,0.1);
 }
