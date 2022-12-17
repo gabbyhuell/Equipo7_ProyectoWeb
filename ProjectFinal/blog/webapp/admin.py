@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import *
 # Register your models here.
 class NoticiaAdmin(admin.ModelAdmin):
-    list_display = ('titulo','teaser', 'contenido', 'imagen', 'categoria', 'usuario')
+    list_display = ('titulo', 'teaser', 'contenido', 'imagen', 'categoria', 'usuario')
 
 admin.site.register(Direccion)
 admin.site.register(Categoria)

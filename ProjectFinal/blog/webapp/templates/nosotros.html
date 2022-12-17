@@ -20,8 +20,10 @@
             <!-- Favicon -->
             <link rel="shortcut icon" href="#">
     </head>
-<body>
-    <!-- header -->
+
+    <body>
+    <div class="wrapper">
+        <!-- header -->
 			<header>
 				<!-- navigation -->
 				<nav class="navbar navbar-default" role="navigation">
@@ -51,7 +53,9 @@
 								<li><a href="nosotros.html">Nosotros</a></li>
 								<li><a href="login.html">Voluntariado</a></li>
                                 <li><a href="contacto.html">Contactanos</a></li>
-								<li><a href="crear_post.html">BLOG</a></li>
+								{% if user.is_superuser %}
+									<li><a href="crear_post.html">BLOG</a></li>
+								{% endif %}
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <span class="caret"></span></a>
 									<ul class="dropdown-menu" role="menu">
@@ -68,14 +72,14 @@
 					</div><!-- /.container-fluid -->
 				</nav>
 			</header>
-    
+
         <div class="container">
-                <div>
-                    <h1> ORIGEN - HISTORIA </h1> <!-- se podria agregar una imagen??? -->
+            <div align="justify">
+                <h1> ORIGEN - HISTORIA </h1> <!-- ¿Se podría agregar una imagen??? -->
                     Muchos de los extranjeros que arribaron a nuestras costas se instalaron en la actual Ciudad Autónoma de Buenos Aires. 
                     El barrio de La Boca del Riachuelo, como tantos otros, comenzó a recibir el flujo de estos inmigrantes, principalmente de origen italiano. 
                     En este contexto de rápido crecimiento demográfico urbano surgirían las primeras organizaciones de bomberos voluntarios en las calles de Buenos Aires, 
-                    ntegradas por ciudadanos dispuestos a colaborar como gesto de solidaridad social. Muchos de estos inmigrantes vivían en 
+                    integradas por ciudadanos dispuestos a colaborar como gesto de solidaridad social. Muchos de estos inmigrantes vivían en
                     condiciones sanitarias deficientes, con elevados niveles de hacimiento y en estructuras en permanente riesgo de sufrir incendios o derrumbes. 
                     La conformación de las primeras asociaciones de bomberos voluntarios fue la respuesta adaptativa de los vecinos organizados frente a dificultades
                     y peligros concretos que enfrentaban a diario.
@@ -89,7 +93,7 @@
                     el domingo p.v. a las 3 p.m. en el ateneo Iris. ¡Conciudadanos! La idea iniciada por pocos tiene necesidad de todos vosotros y 
                     de vuestro válido apoyo, y tendremos el orgullo de haber constituido una Asociación filantrópica. El domingo entonces, en el ateneo Iris, 
                     que nadie falte».
-                    La reunión se llevó a cabo el domingo 2 de junio de 1884, y allí se sentaron las bases para formar la Asociación Italiana de Bomberos 
+                    La reunión se llevó a cabo el lunes 2 de junio de 1884, y allí se sentaron las bases para formar la Asociación Italiana de Bomberos
                     Voluntarios de La Boca. Es por ello que esta fecha quedó consagrada en nuestro país como el Día del Bombero Voluntario 
                     (establecido oficialmente en la Ley N.° 25425, publicada el 15 de mayo de 2001).
                     Una vez constituida la sociedad bajo la presidencia de su iniciador Tomás Liberti, se realizó una suscripción para recaudar 
@@ -99,35 +103,44 @@
                     aduaneros fiscales de “Las Catalinas”, en marzo de 1886.
                     A partir de ese momento y de manera progresiva fueron constituyéndose distintas sociedades de bomberos voluntarios a lo largo y a 
                     lo ancho del territorio argentino, haciendo cada vez más imperiosa la necesidad de aumentar los niveles de articulación y 
-                    coordinación entre las distintas organizaciones ya existentes y las que se irían creando.   
-                </div>
+                    coordinación entre las distintas organizaciones ya existentes y las que se irían creando.
+            </div>
             
             <div class="row"></div>
                 <div class="col-md-4 col-sm-4">
                     <div>
-                        <h1> Acerca de Nosotros </h1>
-                        La institución de Bomberos Voluntarios de Gral. José de San Martín, es una asociación sin fines de lucro, 
-                        fundada el 30 de diciembre de 2019; por miembros de la comunidad, rectificada por Resol. N°563-Matricula N°3557 
+                        <h1> ACERCA DE NOSOTROS </h1>
+                        <div align="justify">
+                            La institución de Bomberos Voluntarios de Gral. José de San Martín, es una asociación sin fines de lucro,
+                            fundada el 30 de diciembre de 2019; por miembros de la comunidad, rectificada por Resol. N.° 563-Matrícula N.°3557
+                         </div>
                     </div>
                 </div>
+
                 <div class="col-md-4 col-sm-4">
                     <div>
-                        <h1> MISIÓN </h1>
-                        Proteger la vida, el ambiente y el patrimonio del municipio de General Jose de San Martín Chaco, 
-                        mediante la atención y gestión del riesgo en incendios, rescates, y otras emergencias, de manera segura, 
-                        eficiente, con sentido de responsabilidad social, fundamentadas en la excelencia institucional del talento humano.
+                        <h1> MISIÓN
+                        </h1>
+                        <div align="justify">
+                            Proteger la vida, el ambiente y el patrimonio del municipio de General Jose de San Martín Chaco,
+                            mediante la atención y gestión del riesgo en incendios, rescates, y otras emergencias, de manera segura,
+                            eficiente, con sentido de responsabilidad social, fundamentadas en la excelencia institucional del talento humano.
+                        </div>
                     </div>
                 </div>
+
                 <div class="col-md-4 col-sm-4">
                     <div>
                         <h1> VISIÓN </h1>
-                        Para el año 2028 la Asociación de Bomberos Voluntarios de General San Martín 
-                        contará con equipamientos de última tecnología, vehículos nuevos y un espacio físico propio 
-                        donde nos permitirá mejorar la prestación del servicio.
+                        <div align="justify">
+                            Para el año 2028 la Asociación de Bomberos Voluntarios de General San Martín
+                            contará con equipamientos de última tecnología, vehículos nuevos y un espacio físico propio
+                            donde nos permitirá mejorar la prestación del servicio.
+                        </div>
                     </div>
                 </div>
-            </div>
         </div>
+
         <footer>
             <div class="container">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1784.772929624745!2d-59.34945158611604!3d-26.5347265847374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc5627f15177b3cd7!2zMjbCsDMyJzA1LjAiUyA1OcKwMjAnNTAuNCJX!5e0!3m2!1ses-419!2sar!4v1671056884619!5m2!1ses-419!2sar" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -143,8 +156,7 @@
                 <!-- This theme comes under Creative Commons Attribution 4.0 Unported. So don't remove below link back -->
                 <p class="copy-right">Copyright &copy; 2022 <a href="#">EQUIPO 7 INFO</a> | DISEÑO POR : <a href="http://www.indioweb.in/portfolio">TEAM 7</a>, SIN DERECHOS </p>
             </div>
-    </footer>
-
+        </footer>
     </div>
     
     

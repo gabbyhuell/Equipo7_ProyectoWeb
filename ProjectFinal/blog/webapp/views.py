@@ -106,7 +106,7 @@ def contact(request):
 
             try:
                 send_mail(subject, message, 'enzi132011@hotmail.com', ['enzo_hca@hotmail.com']) and messages.success(
-                    request, "Formulario Enviado, Gracias por contactarse con nostros")
+                    request, "Formulario Enviado, Gracias por contactarse con nosotros")
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return redirect("/contacto.html")
@@ -126,8 +126,3 @@ def loggedIn(request):
 def logout_view(request):
     logout(request)
     return redirect('index.html')
-
-
-@method_decorator(csrf_exempt, name='dispatch')
-class UserUpdateView(LoginRequiredMixin, View):
-    template_name = 'index.html'
