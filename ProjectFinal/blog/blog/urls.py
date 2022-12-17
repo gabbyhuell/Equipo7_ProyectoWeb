@@ -29,5 +29,6 @@ urlpatterns = [
     path('busqueda.html', Busqueda),
     path('resultado.html', resultado),
     path("contacto.html", contact),
-    path("trabajo.html", trabajo)
+    path("trabajo.html", trabajo),
+    path("a.html", b)
 ]

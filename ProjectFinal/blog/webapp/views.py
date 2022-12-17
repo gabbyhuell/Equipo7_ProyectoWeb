@@ -81,4 +81,6 @@ def contact(request):
 	return render(request, "contacto.html", {'form':form})
 
 
+def b(request):
+    return render(request, 'a.html')
         
