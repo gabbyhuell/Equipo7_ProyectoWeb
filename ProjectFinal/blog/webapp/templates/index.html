@@ -11,11 +11,11 @@
 			
 			<!-- Styles -->
 			<!-- Bootstrap CSS -->
-			<link href="../static/css/bootstrap.min.css" rel="stylesheet">
+			<link href="static/css/bootstrap.min.css" rel="stylesheet">
 			<!-- Font awesome CSS -->
-			<link href="../static/css/font-awesome.min.css" rel="stylesheet">		
+			<link href="static/css/font-awesome.min.css" rel="stylesheet">		
 			<!-- Custom CSS -->
-			<link href="../static/css/style.css" rel="stylesheet">
+			<link href="static/css/style.css" rel="stylesheet">
 			
 			<!-- Favicon -->
 			<link rel="shortcut icon" href="#">
@@ -55,9 +55,7 @@
 								<li><a href="nosotros.html">Nosotros</a></li>
 								<li><a href="login.html">Voluntariado</a></li>
 								<li><a href="contacto.html">Contactanos</a></li>
-								{% if user.is_superuser %}
-									<li><a href="crear_post.html">BLOG</a></li>
-								{% endif %}
+								<li><a href="crear_post.html">BLOG</a></li>
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <span class="caret"></span></a>
 									<ul class="dropdown-menu" role="menu">
@@ -65,9 +63,7 @@
 										<li><a href="#blog">Nuevo Blog</a></li>
 										<li><a href="#subscribe">Subscribirse</a></li>
 										<li><a href="#team">Equipo Ejecutivo</a></li>
-										<li><a href="trabajo.html">Nuestro Trabajo</a></li>
 										<li><a href='logout'>Desconectar</a></li>
-										<li><a href="#">-- algo mas?? --</a></li>
 									</ul>
 								</li>
 							</ul>
@@ -88,7 +84,7 @@
 			<!-- banner end -->
 			
 			<!-- after banner -->
-			<!-- eliminando la sección MISION - VISION - OBJETIVO -->
+			<!-- elimando la seccion MISION - VISION - OBJETIVO -->
 			<!-- after banner end-->
 			
 			<!-- events -->
@@ -107,7 +103,7 @@
 								<!-- heading -->
 								<h4><a href="#"> CURSO RESCATE VEHICULAR </a></h4>
 								<!-- sub text -->
-								<span class="sub-text">Capacitación en extracción de personas</span>
+								<span class="sub-text">Capacitación en extraccion de personas</span>
 								<!-- paragraph -->
 								<p>Salvar vidas In Situ requiere del adecuado entrenamiento</p>
 							</div>
@@ -122,7 +118,7 @@
 								<!-- sub text -->
 								<span class="sub-text"> Festejamos nuestro dia!, sin bajar la guardia! </span>
 								<!-- paragraph -->
-								<p> Agasajo y camaradería, nuestro lema es estar siempre alerta</p>
+								<p> Agasajo y camaraderia, nuestro lema es estar siempre alerta</p>
 							</div>
 						</div>
 						<div class="col-md-4 col-sm-4">
@@ -135,7 +131,7 @@
 								<!-- sub text -->
 								<span class="sub-text"> Educar a los infantes es nuestro compromiso</span>
 								<!-- paragraph -->
-								<p>Simulación y Plan de escape ante siniestros, mantener la calma es la clave del éxito</p>
+								<p>Simulacion y Plan de escape ante siniestros, mantener la calma es la clave del exito</p>
 							</div>
 						</div>
 					</div>
@@ -157,13 +153,13 @@
 								<!-- blog entry image -->
 								<img class="img-responsive" src="../static/img/blog/comunicacion1.jpg" alt="Blog" />
 								<!-- heading / blog post title -->
-								<h3><a href="#">Los Medios de comunicación más importantes </a></h3>
+								<h3><a href="#">Los Medios de comunicacion mas importantes </a></h3>
 								<!-- blog information -->
 								<span class="meta">
 									Diciembre 2022 | Tag: Comunicación | por: Fernando E
 								</span>
 								<!-- paragraph -->
-								<p> debate para definir cuál es el medio de comunicación por excelencia, teléfono, whatsapp, FB?..</p>
+								<p> debate para definir cual es el medio de comunicacion por excelencia, telefono, whatsapp, FB?..</p>
 							</div>
 						</div>
 						<div class="col-md-6 col-sm-6">
@@ -172,7 +168,7 @@
 								<!-- blog entry image -->
 								<img class="img-responsive" src="../static/img/blog/curso.jpg" alt="Blog" />
 								<!-- heading / blog post title -->
-								<h3><a href="#"> La importancia de la capacitación </a></h3>
+								<h3><a href="#"> La importancia de la capacitacion </a></h3>
 								<!-- blog information -->
 								<span class="meta">
 									Diciembre 2022 | Tag: Comunicación | por: Fernando E
@@ -254,12 +250,14 @@
 			<!-- footer -->
 			<footer>
 				<div class="container">
-					<p >Chaco - Gral José de San Martín, Calle Santa Fe 40</p>
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1784.772929624745!2d-59.34945158611604!3d-26.5347265847374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc5627f15177b3cd7!2zMjbCsDMyJzA1LjAiUyA1OcKwMjAnNTAuNCJX!5e0!3m2!1ses-419!2sar!4v1671056884619!5m2!1ses-419!2sar" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-					<p><a href="index.html">INICIO</a> | <a href="trabajo.html">TRABAJO</a> | <a href="#team">EQUIPO</a> | <a href="contacto.html">CONTACTO</a></p>
+					<p><a href="index.html">INICIO</a> | <a href="#work">TRABAJOS</a> | <a href="#team">EQUIPO</a> | <a href="contacto.html">CONTACTO</a></p>
 					<div class="social">
-						<a href="https://www.facebook.com/Bomberos-Voluntarios-San-Mart%C3%ADn-CHACO-100250091762579/" target="_blank"><i class="fa fa-facebook"></i></a>
-						<a><i class="fa fa-phone"></i></a><FONT COLOR="White">(3725-584922)</FONT>
+						<a href="#"><i class="fa fa-facebook"></i></a>
+						<a href="#"><i class="fa fa-twitter"></i></a>
+						<a href="#"><i class="fa fa-dribbble"></i></a>
+						<a href="#"><i class="fa fa-linkedin"></i></a>
+						<a href="#"><i class="fa fa-google-plus"></i></a>
 					</div>
 					<!-- copy right -->
 					<!-- This theme comes under Creative Commons Attribution 4.0 Unported. So don't remove below link back -->
