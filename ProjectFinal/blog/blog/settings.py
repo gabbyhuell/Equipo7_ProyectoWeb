@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'webapp','crispy_forms',
+    'webapp',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -84,7 +85,7 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 #     }
 # }
 
-# configuracion mysql en el archivo settings.py para conectar a la base de datos
+# configuración mysql en el archivo settings.py para conectar a la base de datos
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',

@@ -52,7 +52,7 @@ def logeo(request):
                     message = "Logueado"
                     return redirect('index.html')
                 else:
-                    message = "No legeado"
+                    message = "No logeado"
             else:
                 message = "Nombre de usuario y/o contraseña incorrecta"
     else:
@@ -83,7 +83,7 @@ def Busqueda(request):
         return render(request, "resultado.html", {"articulo": articulo, "query": elemento_buscado})
 
     else:
-        mensaje = "busqueda vacia"
+        mensaje = "busqueda vacía"
     return HttpResponse(mensaje)
 
 
@@ -117,7 +117,7 @@ def contact(request):
 
 def loggedIn(request):
     if request.user.is_authenticated:
-        respuesta = 'Estas logeado como: ' + request.user.username
+        respuesta = 'Estas loge-ado como: ' + request.user.username
     else:
         respuesta = "No estas logueado. <a href='login.html'>Logeate</a>"
     return HttpResponse(respuesta)
