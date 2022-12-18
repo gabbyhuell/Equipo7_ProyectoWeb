@@ -1,14 +1,14 @@
+{%load crispy_forms_tags %}
 <!DOCTYPE html>
 <html>
 
 	<head>
 		<meta charset="utf-8">
-		<title> -= BASE =-</title> 
+		<title> Crear Post </title> 
 		<!-- Description, Keywords and Author -->
 		<meta name="description" content="Your description">
 		<meta name="keywords" content="Your,Keywords">
 		<meta name="author" content="ResponsiveWebInc">
-		
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
 		<!-- Styles -->
@@ -36,7 +36,7 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="index.html"><img class="img-responsive" src="../static/img/logo.jpg" alt="Logo" /></a>
+						<a class="navbar-brand" href="index.html"><img class="img-responsive" src="../static/img/logo_.png" alt="Logo" /></a>
 					</div>
 	
 					<!-- Collect the nav links, forms, and other content for toggling -->
@@ -44,11 +44,15 @@
 						<ul class="nav navbar-nav navbar-right">
 							<li><a href="index.html">Inicio</a></li>
                             <li><a href="registrarse.html">Registrarse</a></li>
-                            <li><a href="login.html">Loguearse</a></li>
+							{% if user.is_authenticated %}
+								<li> User: {{ user.get_username }}</li>
+								<li><a href='logout'>Logout</a></li>
+							{% else %}
+								<li><a href="login.html">Loguearse</a></li>
+							{% endif %}
                             <li><a href="nosotros.html">Nosotros</a></li>
                             <li><a href="login.html">Voluntariado</a></li>
 							<li><a href="contacto.html">Contactanos</a></li>
-                            <li><a href="crear_post.html">BLOG</a></li>
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
@@ -57,6 +61,8 @@
 									<li><a href="#subscribe">Subscribirse</a></li>
 									<li><a href="#team">Equipo Ejecutivo</a></li>
 									<li><a href="trabajo.html">Nuestro Trabajo</a></li>
+									<li><a href='logout'>Desconectar</a></li>
+									<li><a href="#">-- algo mas?? --</a></li>
 								</ul>
 							</li>
 						</ul>
@@ -64,21 +70,20 @@
 				</div><!-- /.container-fluid -->
 			</nav>
 		</header>
-    
-        
-            <form method="POST" enctype="multipart/form-data">
-                {% csrf_token %}
-                <div class="ab-item">
-                    <h5 class="card-header">Postear Nuevo Debate</h5>
-                    <div class="card-body">
-                        {{post_form.as_p}}
-                    </div>
-                    <button type="submit">Guardar</button>
-                    <a href="index.html">Cancelar</a>
-                </div>
-            </form>
-       
-    
+		<form method="POST" enctype="multipart/form-data">
+			<div class="container">
+			{% csrf_token %}
+				<h5> CREA TU NUEVO POST </h5>
+					{{post_form|crispy}}
+					<fieldset class="form-group">
+						{{ form|crispy }}
+					</fieldset>
+					<h6> * campos obligatorios </h6>
+				<button type="submit">Guardar</button>
+				<a href="index.html">Cancelar</a>
+			</div>
+			
+		</form>
 
 		<!-- Javascript files -->
 		<!-- jQuery -->

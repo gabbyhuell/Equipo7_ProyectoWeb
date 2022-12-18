@@ -39,29 +39,20 @@
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>
-							<a class="navbar-brand" href="index.html"><img class="img-responsive" src="../static/img/logo.jpg" alt="Logo" /></a>
+							<a class="navbar-brand" href="index.html"><img class="img-responsive" src="../static/img/logo_.png" alt="Logo" /></a>
 						</div>
 
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav navbar-right">
 								<li><a href="index.html">Inicio</a></li>
-								<li><a href="registrarse.html">Registrarse</a></li>
-								<li><a href="login.html">Loguearse</a></li>
-								<li><a href="nosotros.html">Nosotros</a></li>
-								<li><a href="login.html">Voluntariado</a></li>
-								<li><a href="contacto.html">Contactanos</a></li>
-								<li><a href="crear_post.html">BLOG</a></li>
-								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <span class="caret"></span></a>
-									<ul class="dropdown-menu" role="menu">
-										<li><a href="#event">Eventos</a></li>
-										<li><a href="#blog">Nuevo Blog</a></li>
-										<li><a href="#subscribe">Subscribirse</a></li>
-										<li><a href="#team">Equipo Ejecutivo</a></li>
-										<li><a href="#">-- algo mas?? --</a></li>
-									</ul>
-								</li>
+								{% if user.is_authenticated %}
+									<li> User: {{ user.get_username }}</li>
+									<li><a href='logout'>Logout</a></li>
+								{% else %}
+									<li><a href="login.html">Loguearse</a></li>
+								{% endif %}
+							</ul>
 						</div><!-- /.navbar-collapse -->
 					</div><!-- /.container-fluid -->
 				</nav>
@@ -99,7 +90,7 @@
 							</div>
 							<div class="checkbox form-group">
 								<label>
-									<input type="checkbox"> Acepto los terminos y condiciones
+									<input type="checkbox"> Acepto los términos y condiciones
 								</label>
 							</div>
 							<button type="submit" class="btn btn-default"> Registrarse </button>&nbsp;

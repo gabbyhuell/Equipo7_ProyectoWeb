@@ -60,17 +60,17 @@ hr{
 
 header .navbar { 
 	margin: 0;
-	background: #d65814;
+	background: #B03A2E;
 	border-radius: 0;
 	border-bottom: 2px solid rgba(0,0,0,0.2); 
 	box-shadow: 0 1px 15px rgba(0,0,0,0.2);
 }
 header .navbar-default .navbar-nav>li>a {
-	margin: 25px 10px;
-	padding-top: 6px;
+	margin: 15px 3px;
+	padding-top: 10px;
 	color: #fff;
-	padding-bottom: 6px;
-	border-radius: 2px;
+	padding-bottom: 10px;
+	border-radius: 3px;
 }
 
 header .navbar-default .navbar-nav>li>a:hover, 
@@ -104,7 +104,7 @@ header .navbar-nav .dropdown-menu:after {
 
 header .navbar-nav .dropdown-menu:before {
 	border-color: rgba(194, 225, 245, 0);
-	border-bottom-color: #d65814;
+	border-bottom-color: #fff;
 	border-width: 8px;
 	margin-right: -1px;
 }
@@ -113,9 +113,9 @@ header .navbar-brand {
 	height: auto;
 }
 header .navbar-brand img {
-	position: center;
+	position: relative;
 	top: 5px;
-	max-width: 80px;
+	max-width: 140px;
 }
 
 /*
@@ -123,27 +123,27 @@ header .navbar-brand img {
  */
  
 .banner {
-	background: #e47133;
-	padding-top: 120px;
-	padding-bottom: 120px;
+	background: #E74C3C;
+	padding-top: 80px;
+	padding-bottom: 80px;
 	text-align: center;
 }
 
 .banner h2 {
 	margin-top: 0;
 	margin-bottom: 0;
-	font-size: 28px;
+	font-size: 30px;
 	line-height: 35px;
-	color: #eee;
+	color: #FBFCFC;
 	text-transform: capitalize;
 }
 .banner p {
 	max-width: 700px;
 	margin: 0 auto;
 	margin-top: 10px;
-	font-size: 13px;
+	font-size: 17px;
 	line-height: 24px;
-	color: rgb(130, 130, 130);
+	color: #FBFCFC;
 	text-transform: uppercase;
 	letter-spacing: 0.055em;
 }
@@ -269,9 +269,9 @@ header .navbar-brand img {
 
 .subscribe {
 	margin-top: 60px;
-	padding-top: 80px;
-	padding-bottom: 80px;
-	background: #f8f8f8;
+	padding-top: 60px;
+	padding-bottom: 60px;
+	background: #CCD1D1;
 	border-top: 1px solid #ddd;
 	border-bottom: 1px solid #ddd;
 }
@@ -387,7 +387,7 @@ header .navbar-brand img {
 footer {
 	margin-top: 80px;
 	padding: 50px 0;
-	background: #d65814;
+	background: #B03A2E;
 	text-align: center;
 	border-top: 1px solid rgba(0,0,0,0.1);
 }
