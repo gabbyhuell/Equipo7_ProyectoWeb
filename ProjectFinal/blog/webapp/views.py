@@ -57,7 +57,7 @@ def logeo(request):
                     message = "Logueado"
                     return redirect('index.html')
                 else:
-                    message = "No legeado"
+                    message = "No logeado"
             else:
                 message = "Nombre de usuario y/o contraseña incorrecta"
     else:
@@ -88,7 +88,7 @@ def Busqueda(request):
         return render(request, "resultado.html", {"articulo": articulo, "query": elemento_buscado})
 
     else:
-        mensaje = "busqueda vacia"
+        mensaje = "busqueda vacía"
     return HttpResponse(mensaje)
 
 
@@ -111,7 +111,7 @@ def contact(request):
 
             try:
                 send_mail(subject, message, 'enzi132011@hotmail.com', ['enzo_hca@hotmail.com']) and messages.success(
-                    request, "Formulario Enviado, Gracias por contactarse con nostros")
+                    request, "Formulario Enviado, Gracias por contactarse con nosotros")
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return redirect("/contacto.html")
@@ -122,7 +122,7 @@ def contact(request):
 
 def loggedIn(request):
     if request.user.is_authenticated:
-        respuesta = 'Estas logeado como: ' + request.user.username
+        respuesta = 'Estas loge-ado como: ' + request.user.username
     else:
         respuesta = "No estas logueado. <a href='login.html'>Logeate</a>"
     return HttpResponse(respuesta)
@@ -131,8 +131,3 @@ def loggedIn(request):
 def logout_view(request):
     logout(request)
     return redirect('index.html')
-
-
-@method_decorator(csrf_exempt, name='dispatch')
-class UserUpdateView(LoginRequiredMixin, View):
-    template_name = 'index.html'

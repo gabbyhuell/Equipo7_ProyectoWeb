@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'webapp','crispy_forms',
+    'webapp',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -84,7 +85,7 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 #     }
 # }
 
-# configuracion mysql en el archivo settings.py para conectar a la base de datos
+# configuración mysql en el archivo settings.py para conectar a la base de datos
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -131,7 +132,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 LOGIN_URL = 'login.html'
 
@@ -145,9 +146,9 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'webapp/static')]  # agregado
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp-mail.outlook.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = "enzi132011@hotmail.com"
-EMAIL_HOST_PASSWORD = "locura"
+# EMAIL_USE_TLS = True
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 25
+# EMAIL_HOST_USER = 'correoUser@gmail.com'
+# EMAIL_HOST_PASSWORD = 'la contraseña del mail'
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

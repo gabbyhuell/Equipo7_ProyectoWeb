@@ -18,7 +18,7 @@ class Categoria(models.Model):
 
     class Metta:
         verbose_name = 'Categoría'
-        verbose_name_plural = 'Categorie'
+        verbose_name_plural = 'Categoría'
 
     def __str__(self):
         return self.nombre
@@ -28,18 +28,18 @@ class Categoria(models.Model):
 class Usuario(models.Model):
     nombre = models.CharField('Nombres', max_length=50)
     apellido = models.CharField('Apellidos', max_length=50)
-    usuario = models.CharField('Usario registrado', max_length=50)
+    usuario = models.CharField('Usuario registrado', max_length=50)
     email = models.EmailField('Correo electronico', max_length=255)
     passw = models.CharField(max_length=60)
     passwConfirmacion = models.CharField(max_length=60)
     estatus = models.BooleanField('Activo / Inactivo', default=False)
     tipo = models.IntegerField('Admin / visitante', default=0)
     fecha_creacion = models.DateField('Fecha de creacion', auto_now=False,
-                                      auto_now_add=True)  # auto_now_add fecha autom. en el momento de creacion
-    fecha_actualizacion = models.DateField('Fecha de modificacion', auto_now=True,
-                                           auto_now_add=False)  # auto_now fecha automaticamente cada vez que el registro se modifique
+                                      auto_now_add=True)  # Auto_now_add fecha autom. En el momento de creacion
+    fecha_actualizacion = models.DateField('Fecha de modificación', auto_now=True,
+                                           auto_now_add=False)  # auto_now fecha automáticamente cada vez que el registro se modifique
     fecha_eliminacion = models.DateField('Fecha de eliminacion', auto_now=True, auto_now_add=False)
-    imagen = models.ImageField('Imagen', upload_to='categoria/', max_length=255,null = True)
+    imagen = models.ImageField('Imagen', upload_to='categoria/', max_length=255, null=True)
 
     class Metta:
         verbose_name = 'Usuario'
@@ -53,13 +53,13 @@ class Usuario(models.Model):
 class Noticia(models.Model):
     titulo = models.CharField('Titulo', max_length=255)
     teaser = models.CharField('Resumen', max_length=511)
-    contenido = models.CharField('Contenido', max_length=511) #RichTextField()
+    contenido = models.CharField('Contenido', max_length=511) # RichTextField()
     imagen = models.ImageField('Imagen', upload_to='categoria/', max_length=255, null=True)
     estatus = models.BooleanField('Publicado / No publicado', default=False)
     fecha_creacion = models.DateField('Fecha de creacion', auto_now=False,
-                                      auto_now_add=True, null=True, blank=True)  # auto_now_add fecha autom. en el momento de creacion
-    fecha_actualizacion = models.DateField('Fecha de modificacion', auto_now=True,
-                                           auto_now_add=False, null=True, blank=True)  # auto_now fecha automaticamente cada vez que el registro se modifique
+                                      auto_now_add=True, null=True, blank=True)  # Auto_now_add fecha autom. En el momento de creación
+    fecha_actualizacion = models.DateField('Fecha de modificación', auto_now=True,
+                                           auto_now_add=False, null=True, blank=True)  # auto_now fecha automáticamente cada vez que el registro se modifique
     fecha_eliminacion = models.DateField('Fecha de eliminacion', auto_now=True, auto_now_add=False,  null=True, blank=True)
     categoria = models.ForeignKey(Categoria, on_delete=models.SET_NULL, null=True)
     usuario = models.ForeignKey(Usuario, on_delete=models.SET_NULL, null=True)
@@ -77,7 +77,7 @@ class Noticia(models.Model):
 
 class Web(models.Model):
         nosotros = models.TextField('Nosotros')
-        telefono = models.CharField('Telefono', max_length=13)
+        telefono = models.CharField('Teléfono', max_length=13)
         email = models.EmailField('Correo Electronico', max_length=255)
         direccion = models.ForeignKey(Direccion, on_delete=models.SET_NULL, null=True)
 
@@ -118,13 +118,13 @@ class Contacto(models.Model):
 class Comentario(models.Model):
     comentario = models.CharField('Nombres', max_length=255)
     estatus = models.BooleanField('Publicado / No publicado', default=False)
-    fecha_creacion = models.DateField('Fecha de creacion', auto_now=False,
+    fecha_creacion = models.DateField('Fecha de creación', auto_now=False,
                                       auto_now_add=True, null=True,
-                                      blank=True)  # auto_now_add fecha autom. en el momento de creacion
-    fecha_actualizacion = models.DateField('Fecha de modificacion', auto_now=True,
+                                      blank=True)  # Auto_now_add fecha autom. En el momento de creación
+    fecha_actualizacion = models.DateField('Fecha de modificación', auto_now=True,
                                            auto_now_add=False, null=True,
-                                           blank=True)  # auto_now fecha automaticamente cada vez que el registro se modifique
-    fecha_eliminacion = models.DateField('Fecha de eliminacion', auto_now=True, auto_now_add=False, null=True,
+                                           blank=True)  # auto_now fecha automáticamente cada vez que el registro se modifique
+    fecha_eliminacion = models.DateField('Fecha de eliminación', auto_now=True, auto_now_add=False, null=True,
                                          blank=True)
     noticia = models.ForeignKey(Noticia, on_delete=models.SET_NULL, null=True)
     usuario = models.ForeignKey(Usuario, on_delete=models.SET_NULL, null=True)
