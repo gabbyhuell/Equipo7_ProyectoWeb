@@ -70,7 +70,7 @@ class Noticia(models.Model):
         verbose_name_plural = 'Noticias'
 
     def __str__(self):
-        return f'Usuario {self.id}: {self.nombre} {self.apellido} {self.email}'
+        return f'{self.titulo}'
 
 
 

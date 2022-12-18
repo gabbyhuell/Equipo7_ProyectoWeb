@@ -33,6 +33,11 @@ def nosotros(request):
 def inicio(request):
     return render(request, 'index.html')
 
+def Noticias(request):
+    contexto = {}
+    n = Noticia.objects.all()
+    contexto['noticias']= n
+    return render(request, 'noticias.html', contexto)
 
 def registrarse(request):
     return render(request, 'registrarse.html')
