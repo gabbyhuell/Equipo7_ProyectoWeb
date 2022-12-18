@@ -78,9 +78,4 @@ def contact(request):
 			return redirect ("/contacto.html")
 
 	form = ContactForm()
-	return render(request, "contacto.html", {'form':form})
-
-
-def b(request):
-    return render(request, 'a.html')
-        
+	return render(request, "contacto.html", {'form':form})        
