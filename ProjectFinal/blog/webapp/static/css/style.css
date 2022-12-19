@@ -377,7 +377,7 @@ header .navbar-brand img {
 .register-area form input[type=email] {
 	color:#000 !important;
 }
-.register-area form input[type=] {
+.register-area form input[type=textarea] {
 	color:#000 !important;
 }
 .login-area form .btn {
