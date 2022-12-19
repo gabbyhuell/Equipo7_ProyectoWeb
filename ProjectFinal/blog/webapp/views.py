@@ -110,7 +110,7 @@ def contact(request):
             message = "\n".join(body.values())
 
             try:
-                send_mail(subject, message, 'enzi132011@hotmail.com', ['enzo_hca@hotmail.com']) and messages.success(
+                send_mail(subject, message, 'correoelectronico@gmail', ['correelectronic@gmail.com']) and messages.success(
                     request, "Formulario Enviado, Gracias por contactarse con nosotros")
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
