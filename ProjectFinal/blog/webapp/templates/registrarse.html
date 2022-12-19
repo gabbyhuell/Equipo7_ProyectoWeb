@@ -57,12 +57,12 @@
 				</nav>
 			</header>
 			
-			<!-- banner -->
+			<!-- banner
 			<div class="banner">
 				<div class="container">
-					<!-- form content / register area -->
+					<!-- form content / register area 
 					<div class="register-area">
-						<!-- heading -->
+						<!-- heading 
 						<h3>Registro, Crear una Cuenta </h3>
 						<form role="form" id="register-form">
 							<div class="form-group">
@@ -97,9 +97,32 @@
 						</form>
 					</div>
 				</div>
-			</div>
+			</div> -->
 			<!-- banner end -->
-			
+			{% if form.errors %}
+
+			<div class="card text-center mx-auto" style="width: 20rem; align:center" role="alert">
+				 <div class="card-body">
+					<h4 class="text-danger"><strong>Error de registro!</strong></h4>
+					<li class="mensaje">{{form.errors.username}}</li>
+					<li class="mensaje">{{form.errors.password2}}</li>
+					<a href="{% url 'registro' %}" class="btn btn-danger">Aceptar</a>
+				</div>
+			</div>
+		{%endif%}
+		<div class="card text-center mx-auto" style="width: 26rem;">
+			<div class="card-body">
+				<h5 class="card-title mb-2 fw-mediumbold">Registro</h5>
+				<form method="post">
+					{% csrf_token %}
+					{{ form.as_p }}
+					<button type="submit" class="btn btn-primary">Guardar</button>
+				</form>
+				
+			</div>
+		</div>
+
+
 			<!-- footer -->
 			<footer class="ffoot">
 				<div class="container">

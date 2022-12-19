@@ -5,7 +5,7 @@ from .models import *
 admin.site.register(Direccion)
 admin.site.register(Categoria)
 admin.site.register(Noticia)
-admin.site.register(Usuario)
+#admin.site.register(User)
 admin.site.register(Web)
 admin.site.register(RedesSociales)
 admin.site.register(Contacto)

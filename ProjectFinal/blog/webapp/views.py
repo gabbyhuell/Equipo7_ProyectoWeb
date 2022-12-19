@@ -3,6 +3,18 @@ from django.shortcuts import render
 from .models import *
 from .forms import PostForm
 from django.shortcuts import render, redirect
+from django.http.response import HttpResponseRedirect
+from django.urls.base import reverse_lazy
+from django.views.generic import CreateView
+from django.views.generic.edit import FormView
+from django.utils.decorators import method_decorator
+from django.views.decorators.cache import never_cache
+from django.views.decorators.csrf import csrf_protect
+from django.contrib.auth import login, logout
+from .forms import *
+from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
 def bienvenido(request):
@@ -21,12 +33,41 @@ def nosotros(request):
 def inicio(request):
     return render(request, 'index.html')
 
-def registrarse(request):
-    return render(request, 'registrarse.html')
+# def registrarse(request):
+#     return render(request, 'registrarse.html')
+class RegistroUsuario(CreateView):
+    model = User
+    template_name = 'registrarse.html'
+    form_class = ResgistroForm
+    success_url = reverse_lazy('login')
 
-def login(request):
-    return render(request, 'login.html')
+class Login(FormView):
+    template_name = 'login.html'
+    form_class = FormularioLogin
 
+    success_url = reverse_lazy('index')
+
+    @method_decorator(csrf_protect) # Este decorador agrega protección CSRF
+    @method_decorator(never_cache)
+    def dispatch(self, request, *args , **kwargs):
+        if request.user.is_authenticated:
+            return HttpResponseRedirect(self.get_success_url())
+        else: 
+            return super(Login,self).dispatch(request, *args, **kwargs)
+
+    def form_valid(self, form) :
+        login(self.request,form.get_user())
+        return super(Login, self).form_valid(form)
+
+
+def logoutUsuario(request):
+    logout(request)
+    return HttpResponseRedirect('/accounts/login')
+
+
+# def login(request):
+#     return render(request, 'login.html')
+@login_required
 def crearPost(request):
     if request.method == 'POST':
         post_form = PostForm(request.POST or None, request.FILES or None)
