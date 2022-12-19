@@ -361,7 +361,7 @@ header .navbar-brand img {
 	margin-bottom: 30px;
 	text-align: left;
 }
-.login-area form label ,
+.login-area form label,
 .register-area form label { color: #fff; }
 .login-area form .form-control,
 .register-area form .form-control {
@@ -370,6 +370,15 @@ header .navbar-brand img {
 	border-radius: 2px;
 	height: 45px;
 	font-size: 16px;
+}
+.register-area form input[type=text] {
+	color:#000 !important;
+}
+.register-area form input[type=email] {
+	color:#000 !important;
+}
+.register-area form input[type=textarea] {
+	color:#000 !important;
 }
 .login-area form .btn {
 	display: block;
