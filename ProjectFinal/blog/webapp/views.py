@@ -158,7 +158,7 @@ def Comentar_Noticia(request):
     usu = request.user
     noti = request.POST.get('id_post', None)
     post = Noticia.objects.get(id = noti) 
-    Comentario.objects.create(usuario = usu, posteo = Noticia, texto = com)
+    Comentario.objects.create(usuario = usu, posteo = post, texto = com)
 
     return redirect(reverse_lazy('detalle', kwargs={'pk': noti}))   
 
