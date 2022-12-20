@@ -33,4 +33,5 @@ urlpatterns = [
     path("contacto.html", contact),
     path("trabajo.html", trabajo),
     path('accounts/', include('django.contrib.auth.urls')),
+    path("inscripcion.html", inscripcion)
 ]
