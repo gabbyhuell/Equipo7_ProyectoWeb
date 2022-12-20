@@ -35,5 +35,9 @@ urlpatterns = [
     path("contacto.html", contact),
     path("trabajo.html", trabajo),
     path('accounts/', include('django.contrib.auth.urls')),
-    path('noticias.html', Noticias)
+    path('noticias.html', Noticias),
+    path('Detalle/<int:pk>', Detalle_Noticias, name = 'detalle'),
+    path('Comentario/', Comentar_Noticia, name = 'comentar'),
+    
+    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -83,10 +83,10 @@
 						<div>
 							<!-- after banner item -->
 							<div class="ab-item">
-                                <img src="{{noti.imagen.url}}" width="400" height="250" >
+                                <img src="{{noti.imagen.url}}" width="600" height="300" >
                                 
 								<!-- heading -->
-								<h3>  <a href="#">{{noti.titulo}}</a></h3>
+								<p><a href="{% url 'detalle' noti.pk %}">TITULO: {{noti.titulo}}</a></p>
                                 <div align="justify">
 									<p>{{noti.teaser}}</p>
 								</div>
