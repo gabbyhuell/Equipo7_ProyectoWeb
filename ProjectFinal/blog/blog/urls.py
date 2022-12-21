@@ -38,6 +38,7 @@ urlpatterns = [
     path('noticias.html', Noticias, name= 'noticias'),
     path('Detalle/<int:pk>', Detalle_Noticias, name = 'detalle'),
     path('Comentario/', Comentar_Noticia, name = 'comentar'),
+    path("inscripcion.html", inscripcion)
     
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

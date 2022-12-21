@@ -132,6 +132,10 @@ def loggedIn(request):
 def logout_view(request):
     logout(request)
     return redirect('index.html')
+    
+def inscripcion(request):
+    return render(request, 'inscripcion.html')
+
 
 @login_required
 def Listar_Noticias(request):
