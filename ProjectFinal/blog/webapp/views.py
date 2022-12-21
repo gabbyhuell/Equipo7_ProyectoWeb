@@ -53,7 +53,7 @@ def logeo(request):
                     message = "Logueado"
                     return redirect('index.html')
                 else:
-                    message = "No logeado"
+                    message = "No legeado"
             else:
                 message = "Nombre de usuario y/o contraseña incorrecta"
     else:
