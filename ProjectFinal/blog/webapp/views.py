@@ -31,8 +31,7 @@ def nosotros(request):
 
 
 def inicio(request):
-    ultimasnoti= Noticia.objects.all().order_by('fecha_creacion')[:3]
-    return render(request, 'index.html', {'ultimas3': ultimasnoti})
+    return render(request, 'index.html')
 
 
 def registrarse(request):
@@ -53,7 +52,7 @@ def logeo(request):
                     message = "Logueado"
                     return redirect('index.html')
                 else:
-                    message = "No legeado"
+                    message = "No logeado"
             else:
                 message = "Nombre de usuario y/o contraseña incorrecta"
     else:
@@ -128,4 +127,5 @@ def logout_view(request):
     logout(request)
     return redirect('index.html')
 
-
+def inscripcion(request):
+    return render(request, 'inscripcion.html')
