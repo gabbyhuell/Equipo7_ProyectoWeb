@@ -35,6 +35,6 @@ urlpatterns = [
     path('resultado.html', resultado),
     path("contacto.html", contact),
     path("trabajo.html", trabajo),
-    path('accounts/', include('django.contrib.auth.urls')),
+    #path('accounts/', include('django.contrib.auth.urls')),
     path("inscripcion.html", inscripcion)
 ]
