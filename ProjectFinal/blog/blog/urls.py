@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, re_path
 from django.conf import settings
 from django.conf.urls.static import static
+from django.urls import path, include
 from django.contrib.auth.views import PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView
 from webapp.views import *
 
@@ -35,6 +36,6 @@ urlpatterns = [
     path('resultado.html', resultado),
     path("contacto.html", contact),
     path("trabajo.html", trabajo),
-    #path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
     path("inscripcion.html", inscripcion)
 ]

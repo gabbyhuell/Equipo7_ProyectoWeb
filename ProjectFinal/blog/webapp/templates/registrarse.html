@@ -12,11 +12,11 @@
 		
 		<!-- Styles -->
 		<!-- Bootstrap CSS -->
-		<link href="static/css/bootstrap.min.css" rel="stylesheet">
+		<link href="../static/css/bootstrap.min.css" rel="stylesheet">
 		<!-- Font awesome CSS -->
-		<link href="static/css/font-awesome.min.css" rel="stylesheet">		
+		<link href="../static/css/font-awesome.min.css" rel="stylesheet">		
 		<!-- Custom CSS -->
-		<link href="static/css/style.css" rel="stylesheet">
+		<link href="../static/css/style.css" rel="stylesheet">
 		
 		<!-- Favicon -->
 		<link rel="shortcut icon" href="index.html">
@@ -48,7 +48,7 @@
 								<li><a href="index.html">Inicio</a></li>
 								{% if user.is_authenticated %}
 									<li> User: {{ user.get_username }}</li>
-									<li><a href='logout'>Logout</a></li>
+									<li><a href='logout.html'>Logout</a></li>
 								{% else %}
 									<li><a href="login.html">Loguearse</a></li>
 								{% endif %}
@@ -58,12 +58,12 @@
 				</nav>
 			</header>
 			
-			<!-- banner
+			<!-- banner -->
 			<div class="banner">
 				<div class="container">
-					<!-- form content / register area 
+					<!-- form content / register area -->
 					<div class="register-area">
-						<!-- heading 
+						<!-- heading -->
 						<h3>Registro, Crear una Cuenta </h3>
 						<form role="form" id="register-form">
 							<div class="form-group">
@@ -93,8 +93,10 @@
 									<input type="checkbox"> Acepto los términos y condiciones
 								</label>
 							</div>
-							<button type="submit" class="btn btn-default"> Registrarse </button>&nbsp;
-							<button type="reset" class="btn btn-default"> Limpiar</button>
+							<a href="index">
+							<button type="submit" class="btn btn-default">  Registrarse </button>&nbsp;
+							</a>
+							<button type="reset" class="btn btn-default"> Limpiar </button>
 						</form>
 					</div>
 				</div>
@@ -102,6 +104,7 @@
 			<!-- banner end -->
 			{% if form.errors %}
 
+			<!-- eliminacion de funcionalidad de registro- solo redirecciona al index
 			<div class="card text-center mx-auto" style="width: 20rem; align:center" role="alert">
 				 <div class="card-body">
 					<h4 class="text-danger"><strong>Error de registro!</strong></h4>
@@ -122,7 +125,7 @@
 				
 			</div>
 		</div>
-
+			-->
 
 			<!-- footer -->
 			<footer class="ffoot">
