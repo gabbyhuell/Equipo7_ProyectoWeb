@@ -31,7 +31,8 @@ def nosotros(request):
 
 
 def inicio(request):
-    return render(request, 'index.html')
+    ultimasnoti= Noticia.objects.all().order_by('fecha_creacion')[:3]
+    return render(request, 'index.html', {'ultimas3': ultimasnoti})
 
 
 def registrarse(request):
@@ -126,3 +127,5 @@ def loggedIn(request):
 def logout_view(request):
     logout(request)
     return redirect('index.html')
+
+
