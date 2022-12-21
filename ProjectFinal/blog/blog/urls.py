@@ -17,21 +17,27 @@ from django.contrib import admin
 from django.urls import path, include
 from webapp.views import *
 from django.contrib.auth import views as auth_views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
-    path('', inicio),
+    path('', inicio), 
     path('admin/', admin.site.urls),
-    path('nosotros.html', nosotros),
-    path('index.html', inicio),
-    path('registrarse.html/', registrarse),
-    path('login.html', logeo),
+    path('nosotros.html', nosotros, name= 'nosotros'),
+    path('index.html', inicio, name= 'inicio'),
+    path('registrarse.html', registrarse, name= 'registrarse'),
+    path('login.html', logeo, name= 'login'),
     path('loggedId', loggedIn),
-    path('logout', logout_view),
-    path('crear_post.html', crearPost),
+    path('logout', logout_view, name= 'logout'),
+    path('crear_post.html', crearPost, name= 'crearpost'),
     path('busqueda.html', Busqueda),
     path('resultado.html', resultado),
-    path("contacto.html", contact),
+    path("contacto.html", contact, name= 'contacto'),
     path("trabajo.html", trabajo),
     path('accounts/', include('django.contrib.auth.urls')),
-    path("inscripcion.html", inscripcion)
-]
+    path("inscripcion.html", inscripcion),
+    path('noticias.html', Noticias, name= 'noticias'),
+    path('Detalle/<int:pk>', Detalle_Noticias, name = 'detalle'),
+    path('Comentario/', Comentar_Noticia, name = 'comentar'),
+    
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

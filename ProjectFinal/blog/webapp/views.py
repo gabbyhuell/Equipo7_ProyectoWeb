@@ -11,6 +11,8 @@ from mysqlx import View
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
 from functools import wraps
+from django.urls import reverse_lazy
+from .forms import *
 
 
 # Create your views here.
@@ -33,6 +35,10 @@ def nosotros(request):
 def inicio(request):
     return render(request, 'index.html')
 
+def Noticias(request):
+    n = Noticia.objects.all()
+    contexto= {'noticias': n}
+    return render(request, 'noticias.html', contexto)
 
 def registrarse(request):
     return render(request, 'registrarse.html')
@@ -129,3 +135,44 @@ def logout_view(request):
 
 def inscripcion(request):
     return render(request, 'inscripcion.html')
+    
+@login_required
+def Listar_Noticias(request):
+    contexto = {}
+
+    id_categoria = request.GET.get('id',None)
+
+    if id_categoria:
+        n = Noticia.objects.filter(categoria_noticia = id_categoria)
+    else:
+        n = Noticia.objects.all() #RETORNA UNA LISTA DE OBJETOS
+
+    contexto['noticias'] = n
+
+    cat = Categoria.objects.all().order_by('nombre')
+    contexto['categorias'] = cat
+
+    return render(request, 'noticias/listar.html', contexto) 
+
+@login_required
+def Comentar_Noticia(request):
+
+    com = request.POST.get('comentario',None)
+    usu = request.user
+    noti = request.POST.get('id_post', None)
+    post = Noticia.objects.get(id = noti) 
+    Comentario.objects.create(usuario = usu, posteo = post, texto = com)
+
+    return redirect(reverse_lazy('detalle', kwargs={'pk': noti}))   
+
+@login_required
+def Detalle_Noticias(request, pk):
+    contexto = {}
+
+    n = Noticia.objects.get(pk = pk) #RETORNA SOLO UN OBEJTO
+    contexto['noticia'] = n
+
+    c = Comentario.objects.filter(noticia = n)
+    contexto['comentarios'] = c
+
+    return render(request, 'detalle.html',contexto)

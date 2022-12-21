@@ -22,3 +22,15 @@ class ContactForm(forms.Form):
 class LoginForm(forms.Form):
     username = forms.CharField()
     password = forms.CharField(widget=forms.PasswordInput())
+
+class Coment(models.Model):
+    usuario = models.ForeignKey(Usuario, on_delete = models.CASCADE)
+    texto = models.TextField(max_length = 1500)
+    noticia = models.ForeignKey(Noticia, on_delete = models.CASCADE)
+    fecha = models.DateTimeField(auto_now_add=True)
+
+    def str(self):
+        return f"{self.noticia}->{self.texto}"
+
+
+    
