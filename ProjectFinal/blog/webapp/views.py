@@ -37,7 +37,7 @@ def inicio(request):
 
 def Noticias(request):
     n = Noticia.objects.all()
-    contexto= {'noticias': n}
+    contexto = {'noticias': n}
     return render(request, 'noticias.html', contexto)
 
 def registrarse(request):

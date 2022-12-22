@@ -132,8 +132,8 @@ class Comentario(models.Model):
     usuario = models.ForeignKey(Usuario, on_delete=models.SET_NULL, null=True)
 
     class Metta:
-        verbose_name = 'Contacto'
-        verbose_name_plural = 'Contactos'
+        verbose_name = 'Comentario'
+        verbose_name_plural = 'Comentarios'
 
     def __str__(self):
         return self.comentario
