@@ -5,6 +5,21 @@ from django.forms import fields
 from django.forms.forms import Form
 from .models import *
 
+class ResgistroForm(UserCreationForm):
+    class Meta:
+        model = User
+        fields = [
+                'username',
+                'first_name',
+                'last_name',
+                'email',
+        ]
+        labels = {
+            'username': 'Nombre de Usuario',
+            'first_name': 'Nombres',
+            'last_name': 'Apellidos',
+            'email': 'Correo',
+        }
 
 class PostForm(forms.ModelForm):
     class Meta:
