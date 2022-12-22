@@ -29,7 +29,7 @@ class Categoria(models.Model):
 class Usuario(models.Model):
     nombre = models.CharField('Nombres', max_length=50)
     apellido = models.CharField('Apellidos', max_length=50)
-    usuario = models.CharField('Usuario registrado', max_length=50)
+    usuario = models.CharField('User', max_length=50)
     email = models.EmailField('Correo electronico', max_length=255)
     passw = models.CharField(max_length=60)
     passwConfirmacion = models.CharField(max_length=60)
