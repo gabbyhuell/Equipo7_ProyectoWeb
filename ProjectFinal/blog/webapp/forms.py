@@ -14,8 +14,7 @@ class FormularioLogin(AuthenticationForm):
         self.fields['username'].widget.attrs['placeholder'] = 'Nombre de Usuario'
         self.fields['password'].widget.attrs['class'] = 'form-control'
         self.fields['password'].widget.attrs['placeholder'] = 'Contraseña'
-
-        
+       
 class ResgistroForm(UserCreationForm):
     class Meta:
         model = User
@@ -31,7 +30,12 @@ class ResgistroForm(UserCreationForm):
             'last_name': 'Apellidos',
             'email': 'Correo',
         }
-
+class ContactForm(forms.Form):
+    Nombre = forms.CharField(max_length=50)
+    Apellido = forms.CharField(max_length=50)
+    Correo_Electronico = forms.EmailField(max_length=150)
+    Mensaje = forms.CharField(widget=forms.Textarea(attrs={"class": "form-control"}), max_length=2000)
+    
 class ResetPasswordForm(forms.Form):
     username = forms.CharField(widget=forms.TextInput(attrs={
         'placeholder': 'Ingrese un username',
@@ -39,9 +43,10 @@ class ResetPasswordForm(forms.Form):
         'autocomplete': 'off'
     }))
 
+class LoginForm(forms.Form):
+    username = forms.CharField()
+    password = forms.CharField(widget=forms.PasswordInput())
     
-
-
 class PostForm(forms.ModelForm):
     class Meta:
         model = Noticia
