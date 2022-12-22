@@ -23,7 +23,7 @@
 	
 	<body>
 	
-		<div class="wrapper">
+		<div class="wrapper" >
 			<!-- header -->
 			<header>
 				<!-- navigation -->
@@ -51,9 +51,8 @@
 								{% else %}
 									<li><a href="login.html">Loguearse</a></li>
 								{% endif %}
-								<li><a href="noticias.html">Noticias</a></li>
 								<li><a href="nosotros.html">Nosotros</a></li>
-								<li><a href="login.html">Voluntariado</a></li>
+								<li><a href="inscripcion.html">Voluntariado</a></li>
 								<li><a href="contacto.html">Contactanos</a></li>
 								{% if user.is_superuser %}
 									<li><a href="crear_post.html">BLOG</a></li>
@@ -63,8 +62,8 @@
 									<ul class="dropdown-menu" role="menu">
 										<li><a href="#event">Eventos</a></li>
 										<li><a href="#blog">Nuevo Blog</a></li>
-										<li><a href="#subscribe">Subscribirse</a></li>
-										<li><a href="#team">Equipo Ejecutivo</a></li>
+										<li><a href="#team">Equipo</a></li>
+										<li><a href="trabajo.html">Nuestro Trabajo</a></li>
 										<li><a href='logout'>Desconectar</a></li>
 									</ul>
 								</li>
@@ -77,27 +76,21 @@
 			
           <!-- after banner -->
 			<div class="after-banner">
-				<div class="container">
+				<div class="container"  style="background-color:rgb(255, 248, 240);box-shadow:inset 0 -3em 3em rgba(0,0,0,0.1),0 0  0 2px rgb(228, 224, 219),0.3em 0.3em 1em rgba(0,0,0,0.3)">
 					<div class="row">
                         {% for noti in noticias %}
 						<div>
 							<!-- after banner item -->
-							<div class="ab-item">
-                                <img src="{{noti.imagen.url}}" width="600" height="300" >
+							<div class="ab-item" style="margin-left: 7cm; margin-bottom: 10px">
+                                <img src="{{noti.imagen.url}}" width="600" height="300">
                                 
 								<!-- heading -->
-								<p><a href="{% url 'detalle' noti.pk %}">TITULO: {{noti.titulo}}</a></p>
+								<h4><a href="{% url 'detalle' noti.pk %}">{{noti.titulo}}</a></h4>
                                 <div align="justify">
-									<p>{{noti.teaser}}</p>
+									<p style="color: black;">{{noti.teaser}}</p>
 								</div>
                                 <br>
-                                <span class="meta">
-									{{noti.contenido}}
-								</span>
-								<!-- paragraph -->
-								
-								<br>
-								<a href="#">Read More</a>
+								<a style="font-weight: bolder;font-size: medium;background-color:rgb(243, 243, 243);box-sizing: border-box 20px;box-shadow:inset 0 -3em 3em rgba(94, 94, 94, 0.1),0 0  0 2px rgb(221, 221, 221),0.3em 0.3em 1em rgba(85, 85, 85, 0.3)" href="{% url 'detalle' noti.pk %}">Ver Mas</a>
 							</div>
 						</div>
 						{% endfor %}
@@ -110,22 +103,21 @@
 				
 			
 			<!-- footer -->
-			<footer>
-				<div class="container">
+			<footer class="foot">
+				<div class="container" style= "color:white">
+					<p >Chaco - Gral José de San Martín, Calle Santa Fe 40</p>
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1784.772929624745!2d-59.34945158611604!3d-26.5347265847374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc5627f15177b3cd7!2zMjbCsDMyJzA1LjAiUyA1OcKwMjAnNTAuNCJX!5e0!3m2!1ses-419!2sar!4v1671056884619!5m2!1ses-419!2sar" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-					<p><a href="index.html">INICIO</a> | <a href="#work">TRABAJOS</a> | <a href="#team">EQUIPO</a> | <a href="contacto.html">CONTACTO</a></p>
+					<p><a href="index.html">INICIO</a> | <a href="trabajo.html">TRABAJO</a> | <a href="#team">EQUIPO</a> | <a href="contacto.html">CONTACTO</a></p>
 					<div class="social">
-						<a href="#"><i class="fa fa-facebook"></i></a>
-						<a href="#"><i class="fa fa-twitter"></i></a>
-						<a href="#"><i class="fa fa-dribbble"></i></a>
-						<a href="#"><i class="fa fa-linkedin"></i></a>
-						<a href="#"><i class="fa fa-google-plus"></i></a>
+						<a href="https://www.facebook.com/Bomberos-Voluntarios-San-Mart%C3%ADn-CHACO-100250091762579/" target="_blank"><i class="fa fa-facebook"></i></a>
+						<a><i class="fa fa-phone"></i></a>(3725-584922)
 					</div>
 					<!-- copy right -->
 					<!-- This theme comes under Creative Commons Attribution 4.0 Unported. So don't remove below link back -->
 					<p class="copy-right">Copyright &copy; 2022 <a href="#">EQUIPO 7 INFO</a> | DISEÑO POR : TEAM 7, SIN DERECHOS </p>
 				</div>
 			</footer>
+		</div>
 
 		</div>
 		
