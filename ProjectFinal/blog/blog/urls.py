@@ -14,20 +14,30 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from webapp.views import *
+from django.contrib.auth import views as auth_views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
+    path('', inicio), 
     path('admin/', admin.site.urls),
-    path('', bienvenido),
-    path('despedida.html', despedirse),
-    path('nosotros.html', nosotros),
-    path('index.html', inicio),
-    path('registrarse.html', registrarse),
-    path('login.html', login),
-    path('crear_post.html', crearPost),
+    path('nosotros.html', nosotros, name='nosotros'),
+    path('index.html', inicio, name='inicio'),
+    path('registrarse', registrarse, name='registrarse'),
+    path('login.html', logeo, name='login'),
+    path('loggedId', loggedIn),
+    path('logout.html', logout_view, name='logout'),
+    path('crear_post.html', crearPost, name='crearpost'),
     path('busqueda.html', Busqueda),
     path('resultado.html', resultado),
-    path("contacto.html", contact),
-    path("trabajo.html", trabajo)
-]
+    path("contacto.html", contact, name='contacto'),
+    path("trabajo.html", trabajo, name='trabajo'),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path("inscripcion.html", inscripcion, name='inscripcion'),
+    path('noticias.html', Noticias, name='noticias'),
+    path('Detalle/<int:pk>', Detalle_Noticias, name='detalle'),
+    path('Comentario/', Comentar_Noticia, name='comentar'),
+    
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
