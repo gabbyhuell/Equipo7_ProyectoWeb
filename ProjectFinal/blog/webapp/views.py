@@ -1,6 +1,5 @@
 from django.http import HttpResponse
 from .models import *
-from .forms import PostForm, LoginForm, ContactForm
 from django.core.mail import send_mail, BadHeaderError
 from django.shortcuts import render, redirect
 from django.contrib import messages
@@ -13,6 +12,7 @@ from django.views.decorators.csrf import csrf_exempt
 from functools import wraps
 from django.urls import reverse_lazy
 from .forms import *
+from django.views.generic import CreateView
 
 
 # Create your views here.
@@ -40,14 +40,20 @@ def Noticias(request):
     contexto= {'noticias': n}
     return render(request, 'noticias.html', contexto)
 
-def registrarse(request):
-    return render(request, 'registrarse.html')
+# def registrarse(request):
+#     return render(request, 'registrarse.html')
+
+class RegistroUsuario(CreateView):
+    model = User
+    template_name = 'registrarse.html'
+    form_class = ResgistroForm
+    success_url = reverse_lazy('inicio')
 
 
 def logeo(request):
     message = None
     if request.method == "POST":
-        form = LoginForm(request.POST)
+        form = FormularioLogin(request.POST)
         if form.is_valid():
             username = request.POST['username']
             password = request.POST['password']
@@ -62,7 +68,7 @@ def logeo(request):
             else:
                 message = "Nombre de usuario y/o contraseña incorrecta"
     else:
-        form = LoginForm
+        form = FormularioLogin
     return render(request, 'login.html', {'message': message, 'form': form})
 
 
