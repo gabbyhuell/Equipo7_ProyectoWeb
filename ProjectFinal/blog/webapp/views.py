@@ -162,7 +162,7 @@ def Comentar_Noticia(request):
 
     return redirect(reverse_lazy('detalle', kwargs={'pk': noti}))   
 
-@login_required
+
 def Detalle_Noticias(request, pk):
     contexto = {}
 
