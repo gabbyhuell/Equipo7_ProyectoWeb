@@ -13,7 +13,7 @@ from django.views.decorators.csrf import csrf_exempt
 from functools import wraps
 from django.urls import reverse_lazy
 from .forms import *
-
+from django.views.generic import CreateView
 
 # Create your views here.
 def bienvenido(request):
@@ -40,8 +40,14 @@ def Noticias(request):
     contexto = {'noticias': n}
     return render(request, 'noticias.html', contexto)
 
-def registrarse(request):
-    return render(request, 'registrarse.html')
+# def registrarse(request):
+#     return render(request, 'registrarse.html')
+
+class RegistroUsuario(CreateView):
+    model = User
+    template_name = 'registrarse.html'
+    form_class = ResgistroForm
+    success_url = reverse_lazy('inicio')
 
 
 def logeo(request):
