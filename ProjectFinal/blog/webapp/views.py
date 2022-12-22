@@ -136,7 +136,7 @@ def logout_view(request):
 def inscripcion(request):
     return render(request, 'inscripcion.html')
     
-@login_required
+
 def Listar_Noticias(request):
     contexto = {}
 

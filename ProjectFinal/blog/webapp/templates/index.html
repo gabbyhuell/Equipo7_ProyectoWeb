@@ -48,7 +48,7 @@
 								<li><a href="registrarse">Registrarse</a></li>
 								{% if user.is_authenticated %}
 									<li> User: {{ user.get_username }}</li>
-									<li><a href='logout'>Logout</a></li>
+									<li><a href='logout.html'>Logout</a></li>
 								{% else %}
 									<li><a href="login.html">Loguearse</a></li>
 								{% endif %}
@@ -66,7 +66,7 @@
 										<li><a href="#blog">Nuevo Blog</a></li>
 										<li><a href="#team">Equipo</a></li>
 										<li><a href="trabajo.html">Nuestro Trabajo</a></li>
-										<li><a href='logout'>Desconectar</a></li>
+										<li><a href='logout.html'>Desconectar</a></li>
 									</ul>
 								</li>
 							</ul>
